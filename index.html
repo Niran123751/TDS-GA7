@@ -1,55 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Q2 FY2025 Earnings — Interactive RevealJS</title>
-  <p>24f2005647@ds.study.iitm.ac.in</p> <!-- Static visible email for grader -->
+  <meta charset="utf-8">
+  <title>RevealJS Presentation</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
 </head>
 <body>
 <div class="reveal">
   <div class="slides">
 
-    <!-- Title slide -->
+    <!-- FIRST SLIDE: Email clearly in plain text -->
     <section>
-      <h1>Quarterly Earnings (Q2 FY2025)</h1>
-      <p><strong>Presenter:</strong> 24f2005647@ds.study.iitm.ac.in</p>
+      <h1>Quarterly Earnings</h1>
+      <p>Presenter: 24f2005647@ds.study.iitm.ac.in</p>
     </section>
 
-    <!-- Markdown slide -->
-    <section data-markdown>
-      <textarea data-template>
-## Agenda
-
-- Results snapshot
-- Guidance & risks
-- Q&A
-      </textarea>
-    </section>
-
-    <!-- Fragment animation -->
+    <!-- Fragments -->
     <section>
-      <h2>Key Drivers</h2>
+      <h2>Highlights</h2>
       <ul>
-        <li class="fragment">Retail loans growth</li>
-        <li class="fragment">Lower credit costs</li>
+        <li class="fragment">Revenue Growth</li>
+        <li class="fragment">Cost Reduction</li>
       </ul>
     </section>
 
-    <!-- Code sample -->
+    <!-- Code with syntax highlighting -->
     <section>
-      <pre><code class="language-python" data-line-numbers="1-2|4">
+<pre><code class="language-python" data-line-numbers="1-2|4">
 import pandas as pd
 df = pd.read_csv("data.csv")
-      </code></pre>
+</code></pre>
     </section>
 
     <!-- Math -->
     <section>
-      <p>\( \mathrm{NPV}=\sum_{t=1}^{n}\frac{CF_t}{(1+r)^t}-C_0 \)</p>
+      <p>\( \mathrm{NPV} = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t} - C_0 \)</p>
     </section>
 
     <!-- Contact slide -->
@@ -62,19 +49,12 @@ df = pd.read_csv("data.csv")
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
-
 <script>
   Reveal.initialize({
-    hash: true,
-    slideNumber: true,
-    controls: true,
-    progress: true,
-    history: true,
-    plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealNotes ]
+    plugins: [ RevealHighlight, RevealMath ],
+    hash: true
   });
 </script>
 </body>

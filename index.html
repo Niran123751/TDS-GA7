@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q2 FY2025 Earnings — Interactive RevealJS</title>
+
+  <!-- Core + theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+
+  <style>
+    .chart { height: 420px; margin: 20px auto; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- Title + email + fragments + notes -->
+    <section>
+      <h1>Quarterly Earnings (Q2 FY2025)</h1>
+      <p><strong>Presenter:</strong> 24f2005647@ds.study.iitm.ac.in</p>
+      <p class="fragment">Built with <em>RevealJS</em></p>
+      <aside class="notes">
+        Welcome stakeholders. Press S to open speaker notes.
+        Outline agenda, timelines, and what decisions we need today.
+      </aside>
+    </section>
+
+    <!-- Markdown slide -->
+    <section data-markdown>
+      <textarea data-template>
+## Agenda (Markdown)
+
+- Results snapshot
+- Guidance & risks
+- Q&A
+
+**Tip:** Press `O` for overview.
+
+---
+## Results Snapshot
+
+- Revenue ↑ **12.3%** YoY
+- Operating Margin **18.6%**
+- Free Cash Flow **₹X crore**
+      </textarea>
+    </section>
+
+    <!-- Fragments (animated reveal) -->
+    <section>
+      <h2>Key Drivers</h2>
+      <ul>
+        <li class="fragment">Retail loans book growth</li>
+        <li class="fragment">Lower credit costs</li>
+        <li class="fragment fade-up">Cost-to-income improvements</li>
+      </ul>
+      <aside class="notes">
+        Reveal each point; pause to discuss cost initiatives.
+      </aside>
+    </section>
+
+    <!-- Code sample with syntax highlighting + line highlights -->
+    <section>
+      <h2>Code Sample: Quick KPI Check</h2>
+      <pre><code class="language-python" data-line-numbers="1-2|4,7-8">
+import pandas as pd
+
+df = pd.read_csv("kpis.csv")
+
+df["YoY_Growth"] = (df["Q2_2025"] - df["Q2_2024"]) / df["Q2_2024"]
+print(df[["Metric", "YoY_Growth"]].round(3))
+      </code></pre>
+      <aside class="notes">
+        Demonstrate reproducible analysis—simple, auditable KPI script.
+      </aside>
+    </section>
+
+    <!-- Math (financial formulas) -->
+    <section>
+      <h2>Financial Formulas</h2>
+      <p>\( \mathrm{NPV}=\sum_{t=1}^{n}\frac{CF_t}{(1+r)^t}-C_0 \)</p>
+      <p>\( E(R_i)=R_f+\beta_i\,(E(R_m)-R_f) \)</p>
+      <aside class="notes">
+        Recap how NPV & CAPM inform scenario testing and guidance.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Thank You</h2>
+      <p>Contact: <a href="mailto:24f2005647@ds.study.iitm.ac.in">24f2005647@ds.study.iitm.ac.in</a></p>
+      <p>Keyboard: <kbd>F</kbd> fullscreen • <kbd>S</kbd> notes • <kbd>O</kbd> overview</p>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal core + plugins -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,          // deep links & back button
+    slideNumber: true,   // show slide numbers
+    controls: true,
+    progress: true,
+    history: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealNotes ]
+  });
+</script>
+</body>
+</html>

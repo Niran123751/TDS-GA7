@@ -1,60 +1,144 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>RevealJS Presentation</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q2 FY2025 Earnings — Interactive RevealJS Deck</title>
+
+  <!-- Core reveal.js styles and theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
+  <link id="theme" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" />
+
+  <!-- Syntax highlighting theme (Monokai) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css" />
+
+  <style>
+    .branding { font-size: 0.95rem; color: #666; }
+    .kpi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .kpi > div { padding: 1rem; border-radius: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    .kpi .up { color: #0b7c35; }
+    .kpi .down { color: #a31515; }
+    .caption { font-size: .8rem; color: #777; }
+  </style>
 </head>
 <body>
 <div class="reveal">
   <div class="slides">
 
-    <!-- FIRST SLIDE: Email clearly in plain text -->
+    <!-- Title -->
     <section>
-      <h1>Quarterly Earnings</h1>
-      <p>Presenter: 24f2005647@ds.study.iitm.ac.in</p>
+      <h1>Q2 FY2025 Earnings Report</h1>
+      <p>Technical Consultant · Major Financial Institution</p>
+      <p class="branding">Contact: <strong>24f2005647@ds.study.iitm.ac.in</strong></p>
+      <aside class="notes">
+        Welcome the audience. Mention the deck demonstrates RevealJS features the stakeholders can reuse.
+        Outline agenda: performance, breakdowns, outlook.
+      </aside>
     </section>
 
-    <!-- Fragments -->
+    <!-- Agenda with fragments (animated reveals) -->
     <section>
-      <h2>Highlights</h2>
+      <h2>Agenda</h2>
       <ul>
-        <li class="fragment">Revenue Growth</li>
-        <li class="fragment">Cost Reduction</li>
+        <li class="fragment">Performance overview</li>
+        <li class="fragment">Revenue & cost breakdown</li>
+        <li class="fragment">Guidance & risk</li>
+        <li class="fragment">Q&amp;A</li>
       </ul>
+      <aside class="notes">Use right-arrow to advance; each bullet appears as a fragment.</aside>
     </section>
 
-    <!-- Code with syntax highlighting -->
+    <!-- KPI tiles (simple grid) -->
     <section>
-<pre><code class="language-python" data-line-numbers="1-2|4">
-import pandas as pd
-df = pd.read_csv("data.csv")
-</code></pre>
+      <h2>Headline KPIs</h2>
+      <div class="kpi">
+        <div class="fragment">
+          <h3>Revenue</h3>
+          <p><strong>$5.4B</strong> <span class="up">(+7% YoY)</span></p>
+        </div>
+        <div class="fragment">
+          <h3>Net Income</h3>
+          <p><strong>$1.02B</strong> <span class="up">(+5% YoY)</span></p>
+        </div>
+        <div class="fragment">
+          <h3>EPS (dil.)</h3>
+          <p><strong>$2.11</strong> <span class="down">(-2% QoQ)</span></p>
+        </div>
+      </div>
+      <p class="caption">Numbers are placeholders for demo purposes.</p>
+      <aside class="notes">Explain color semantics; emphasize this is a tech demo.</aside>
     </section>
 
-    <!-- Math -->
+    <!-- Math (financial formulas) -->
     <section>
-      <p>\( \mathrm{NPV} = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t} - C_0 \)</p>
+      <h2>Financial Formulas</h2>
+      <p>EPS: \(\mathrm{EPS} = \dfrac{\text{Net Income}}{\text{Shares Outstanding}}\)</p>
+      <p>NPV: $$ \text{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t} $$</p>
+      <p>WACC: $$ \text{WACC} = \frac{E}{D+E} r_e + \frac{D}{D+E} r_d (1-\tau) $$</p>
+      <aside class="notes">Briefly define EPS, NPV, WACC and how they guide capital allocation & guidance.</aside>
     </section>
 
-    <!-- Contact slide -->
+    <!-- Code sample with syntax highlighting + line highlights -->
     <section>
-      <h2>Contact</h2>
-      <p>Email: 24f2005647@ds.study.iitm.ac.in</p>
+      <h2>Sample Code: KPI Calculation (Python)</h2>
+      <pre><code class="language-python" data-trim data-line-numbers="1-4|6-12">
+import math
+
+# Compute EPS, NPV and simple YoY growth
+net_income = 1.02e9
+shares_out = 4.83e8
+
+eps = net_income / shares_out
+cashflows = [-2.0e9, 1.2e9, 1.1e9, 0.9e9]
+r = 0.09
+npv = sum(cf / ((1 + r) ** t) for t, cf in enumerate(cashflows))
+
+def yoy(curr, prev):
+    return (curr - prev) / prev
+
+print(f"EPS: {eps:.2f}")
+print(f"NPV: ${npv:,.0f}")
+print(f"YoY: {yoy(5.4, 5.0):.1%}")
+      </code></pre>
+      <aside class="notes">Point out syntax highlighting, line numbers and staged highlights via data-line-numbers.</aside>
+    </section>
+
+    <!-- Markdown slide (authored in Markdown) -->
+    <section data-markdown>
+      <textarea data-template>
+## Outlook & Guidance (Markdown)
+
+- FY2025 revenue growth: **6–8%**
+- Operating margin: **19–21%**
+- Capital return: share **buybacks** + **dividends**
+
+<small class="fragment">Risks: rate volatility, credit cycle, regulatory timelines.</small>
+      </textarea>
+    </section>
+
+    <!-- Contact / wrap-up -->
+    <section>
+      <h2>Thank You</h2>
+      <p>Contact: <strong>24f2005647@ds.study.iitm.ac.in</strong></p>
+      <aside class="notes">Open the floor for questions. Press <kbd>S</kbd> for Speaker View.</aside>
     </section>
 
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+<!-- Scripts: core + plugins (Markdown, Highlight, Notes, Math via KaTeX) -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
 <script>
   Reveal.initialize({
-    plugins: [ RevealHighlight, RevealMath ],
-    hash: true
+    hash: true,
+    slideNumber: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+    // Optional: KaTeX configuration (can be omitted if defaults are fine)
+    katex: { version: 'latest' }
   });
 </script>
 </body>
